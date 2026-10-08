@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+.langsmith/
+.langgraph_api/
+mlruns/
+mlartifacts/
+*.pkl
+node_modules/
+uv.lock
+.venv/
+__pycache__/
+.env
