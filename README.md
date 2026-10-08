@@ -15,13 +15,26 @@ Work the folders in order. Each folder README names the RAG idea, the file
 that demonstrates it, and what to look for in that file.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+# install uv if you do not have it: https://docs.astral.sh/uv/
+uv sync
+cp .env.example .env
+# fill OPENAI_API_KEY and TAVILY_API_KEY in .env
+uv run jupyter lab
 ```
 
-Most notebooks expect `OPENAI_API_KEY` in a `.env` file. A few use Groq,
-Hugging Face, Pinecone, or Astra. Keys are never committed.
+This repo is a uv project (`pyproject.toml`). `uv sync` creates `.venv` here and installs dependencies. Run notebooks and scripts with `uv run` so an already-activated venv from another folder is ignored.
+
+Windows PowerShell:
+
+```powershell
+uv sync
+copy .env.example .env
+uv run jupyter lab
+```
+
+If another project's venv is active, uv warns that `VIRTUAL_ENV` does not match `.venv` and ignores it. That is what you want. Do not pass `--active` unless you mean to use the other environment.
+
+Keys stay in `.env` only. Notebooks must read them with `load_dotenv()` and `os.getenv`. A few notebooks also use Groq, Hugging Face, Pinecone, or Astra.
 
 ## Map
 

@@ -1,0 +1,25 @@
+[project]
+name = "ultimate-rag-bootcamp"
+version = "0.1.0"
+description = "Reorganized RAG bootcamp notebooks and projects"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "langchain",
+  "langgraph",
+  "langchain-core",
+  "langchain-community",
+  "langchain-openai",
+  "langchain-groq",
+  "langchain-huggingface",
+  "langchain-tavily",
+  "python-dotenv",
+  "arxiv",
+  "wikipedia",
+  "faiss-cpu",
+  "jupyter",
+  "ipykernel",
+]
+
+[tool.uv]
+package = false
