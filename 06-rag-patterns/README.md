@@ -5,14 +5,16 @@ Same index, different control flow around it.
 ## Concepts
 
 - **Stuff.** Put the retrieved chunks in one prompt. Default, and what the hybrid notebook does.
-- **Corrective.** A grader rejects bad chunks, then the graph rewrites or searches the web.
+- **Corrective (CRAG).** A grader rejects bad chunks, then the graph rewrites or searches the web.
+- **Self-RAG.** Model decides whether retrieval is needed and critiques both passages and its own answer.
 - **Adaptive.** A router skips retrieval for chit-chat and uses it for policy questions.
 - **Chain-of-thought RAG.** Reason over the chunks before the final sentence.
-- **Iterative.** A second retrieval fills a hole the first pass missed.
+- **Iterative / Agentic RAG.** Agent controls retrieval — can retrieve multiple times, decompose, stop when sufficient.
 - **Self-reflection.** Check the draft against the context.
 - **CAG.** Skip retrieval when the knowledge already fits in a cache.
 - **Vectorless.** Walk a page or section index instead of an embedding index.
 - **Multimodal.** Retrieve images or pages, not only text.
+- **GraphRAG.** Knowledge graph + community summaries for relational / multi-hop questions.
 
 ## Files
 
@@ -27,3 +29,9 @@ Same index, different control flow around it.
 | `cache-augmented-generation.ipynb` | CAG. **Important:** the cache goes stale. It is not a substitute for an index that changes daily. |
 | `vectorless-pageindex.ipynb` | PageIndex-style retrieval without vectors. **Important:** this wins on long structured docs, not on a pile of chats. |
 | `multimodal-rag.ipynb` | OpenAI multimodal inputs. **Important:** an image still needs a citation back to the source file. |
+
+## Deeper Notes
+
+Full comparison of Naive / Hybrid / Self-RAG / CRAG / Agentic RAG / GraphRAG:
+
+**[makan_m/learning-concepts/17-advanced-rag-patterns.md](https://github.com/yash9614/makan_m/blob/main/learning-concepts/17-advanced-rag-patterns.md)**
